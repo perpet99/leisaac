@@ -72,3 +72,17 @@ We're always looking for talented individuals passionate about AI and robotics! 
 **Let's build the future of robotics together! 🤝**
 
 ---
+
+C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py \
+  --task LeIsaac-SO101-PickOrange-v0 \
+  --teleop_device joycon \
+  --record \
+  --dataset_file ./datasets/joycon_pickOrange.hdf5 \
+  --resume \
+  --enable_cameras
+
+
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-PickOrange-v0 --teleop_device joycon-ee --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-LiftCube-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+
