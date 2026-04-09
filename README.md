@@ -82,9 +82,9 @@ C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleopera
   --enable_cameras
 
 
-  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-PickOrange-v0 --teleop_device joycon-ee --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent2.py --task LeIsaac-SO101-PickOrange-v0 --teleop_device joycon-ee --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
 
-  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-LiftCube-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent2.py --task LeIsaac-SO101-LiftCube-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
 
 miniconda3 가상환경 설정하고 scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-LiftCube-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
 실행
