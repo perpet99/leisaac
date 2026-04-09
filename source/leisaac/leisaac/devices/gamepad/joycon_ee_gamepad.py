@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 # joyconrobotics is a local package without setup.py; add its parent to sys.path.
-_JOYCONROBOTICS_DIR = Path("D:/perpet/git/LLM/XLeRobot/software")
+_JOYCONROBOTICS_DIR = Path(__file__).parent
 if str(_JOYCONROBOTICS_DIR) not in sys.path:
     sys.path.insert(0, str(_JOYCONROBOTICS_DIR))
 

@@ -8,7 +8,7 @@ from leisaac.assets.robots.lerobot import SO101_FOLLOWER_USD_JOINT_LIMLITS
 
 def init_action_cfg(action_cfg, device):
     """SO101 Follower action configuration: arm_action and gripper_action"""
-    if device in ["so101leader", "lekiwi-leader"]:
+    if device in ["so101leader", "lekiwi-leader", "joycon-ee"]:
         action_cfg.arm_action = mdp.JointPositionActionCfg(
             asset_name="robot",
             joint_names=["shoulder_pan", "shoulder_lift", "elbow_flex", "wrist_flex", "wrist_roll"],
@@ -19,7 +19,7 @@ def init_action_cfg(action_cfg, device):
             joint_names=["gripper"],
             scale=1.0,
         )
-    elif device in ["keyboard", "gamepad", "lekiwi-keyboard", "lekiwi-gamepad"]:
+    elif device in ["keyboard", "gamepad", "joycon", "lekiwi-keyboard", "lekiwi-gamepad"]:
         action_cfg.arm_action = mdp.DifferentialInverseKinematicsActionCfg(
             asset_name="robot",
             joint_names=["shoulder_lift", "elbow_flex", "wrist_flex", "wrist_roll"],
@@ -166,6 +166,10 @@ def convert_action_from_so101_leader(
 
 def preprocess_device_action(action: dict[str, Any], teleop_device) -> torch.Tensor:
     if action.get("so101_leader") is not None:
+        processed_action = convert_action_from_so101_leader(
+            action["joint_state"], action["motor_limits"], teleop_device
+        )
+    elif action.get("joycon_ee") is not None:
         processed_action = convert_action_from_so101_leader(
             action["joint_state"], action["motor_limits"], teleop_device
         )

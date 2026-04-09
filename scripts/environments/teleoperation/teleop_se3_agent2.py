@@ -72,6 +72,7 @@ parser.add_argument("--use_lerobot_recorder", action="store_true", help="whether
 parser.add_argument("--lerobot_dataset_repo_id", type=str, default=None, help="Lerobot Dataset repository ID.")
 parser.add_argument("--lerobot_dataset_fps", type=int, default=30, help="Lerobot Dataset frames per second.")
 parser.add_argument("--show_camera", action="store_true", help="Show wrist/front camera feed in real-time via OpenCV.")
+parser.add_argument("--no_cameras", action="store_true", help="Disable all cameras in the scene (allows UI mode without syntheticdata crash).")
 
 # append AppLauncher cli args
 AppLauncher.add_app_launcher_args(parser)
@@ -181,6 +182,16 @@ def main():  # noqa: C901
     if args_cli.quality:
         env_cfg.sim.render.antialiasing_mode = "FXAA"
         env_cfg.sim.render.rendering_mode = "quality"
+
+    # disable all cameras when --no_cameras is set (allows UI mode without syntheticdata crash)
+    if args_cli.no_cameras:
+        if hasattr(env_cfg, "scene"):
+            for attr in list(vars(env_cfg.scene)):
+                val = getattr(env_cfg.scene, attr)
+                if hasattr(val, "__class__") and "Camera" in type(val).__name__:
+                    # Reduce to minimal resolution to minimize VRAM usage
+                    val.width = 64
+                    val.height = 64
 
     # precheck task and teleop device
     if "BiArm" in task_name:
