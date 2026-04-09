@@ -82,7 +82,15 @@ C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleopera
   --enable_cameras
 
 
-  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-PickOrange-v0 --teleop_device joycon-ee --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent2.py --task LeIsaac-SO101-PickOrange-v0 --teleop_device joycon-ee --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
 
-  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent.py --task LeIsaac-SO101-LiftCube-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent2.py --task LeIsaac-SO101-LiftCube-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
 
+  C:/Users/perpe/miniconda3/envs/leisaac/python.exe scripts/environments/teleoperation/teleop_se3_agent2.py --task LeIsaac-SO101-CleanToyTable-v0 --teleop_device joycon-ee --debug_joycon --record --dataset_file ./datasets/joycon_pickOrange.hdf5 --resume --enable_cameras
+
+https://lightwheelai.github.io/leisaac/resources/available_env
+
+https://lightwheel.ai/assets-type-content?type=LeRobotAssets
+
+
+https://kabilankb.substack.com/p/end-to-end-setup-of-leisaac-lekiwi?utm_campaign=post-expanded-share&utm_medium=post%2Bviewer&triedRedirect=true
